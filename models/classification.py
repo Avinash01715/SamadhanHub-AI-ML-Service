@@ -1,4 +1,3 @@
-
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from data.training_data import CLASSIFICATION_DATA
