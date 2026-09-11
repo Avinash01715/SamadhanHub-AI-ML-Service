@@ -11,6 +11,7 @@ from models.matching import (
 def _calculate_scores(classification: dict, priority: str, text: str) -> dict:
     domain_match = int(round(classification["confidence"] * 100))
     urgency = 78 if priority == "HIGH" else 55
+  
     strong_urgent = ["emergency", "collapsed", "outbreak", "contaminated", "no water", "flooded"]
     text_lower = text.lower()
     for word in strong_urgent:

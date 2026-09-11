@@ -42,9 +42,12 @@ if st.button("Process Submission", type="primary"):
             st.markdown(f"**Category:** `{result.get('category')}`")
             # Surface the model's confidence so low-confidence guesses
             # are visible instead of looking as certain as a clean match
-            if result.get("category_confidence") is not None:
-                st.markdown(f"**Category confidence:** `{result['category_confidence']}`")
-                if result.get("low_confidence_category"):
+            # NOTE: pipeline.py returns "domain_match_score" (0-100) and
+            # "low_confidence" (bool) -- earlier keys here never matched
+            # what pipeline.py actually returns, so this block never fired.
+            if result.get("domain_match_score") is not None:
+                st.markdown(f"**Category confidence:** `{result['domain_match_score']}/100`")
+                if result.get("low_confidence"):
                     st.warning("⚠️ Low confidence category — may need manual review.")
 
         with col2:

@@ -1,0 +1,56 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+ENV/
+.python-version
+
+# --- Packaging / build artifacts ---
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# --- Environment / secrets ---
+.env
+.env.*
+*.pem
+*.key
+
+# --- FastAPI / uvicorn ---
+*.log
+
+# --- Streamlit ---
+.streamlit/secrets.toml
+
+# --- Jupyter (in case notebooks get added later) ---
+.ipynb_checkpoints/
+
+# --- ML artifacts (models are trained at import time, but ignore if ever pickled) ---
+*.pkl
+*.joblib
+*.h5
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# --- Testing / coverage ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Data (avoid committing large/generated datasets by accident) ---
+*.csv
+*.sqlite3
